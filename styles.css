@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    font-family: cursive , sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Headings */
+h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #007bff;
+    margin-top: 20px;
+}
+
+/* List Styles */
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push to the right */
+}
+
+.deadline, .priority, .labels {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Task Categories Styles */
+#task-categories {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.task-category {
+    margin-bottom: 40px;
+}
+
+.task-category ul {
+    padding-left: 20px;
+    border-left: 2px solid #007bff;
+}
+
+.task-category h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+    content: "\2610"; /* Unicode character for empty checkbox */
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 1.2em;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: "\2611"; /* Unicode character for checked checkbox */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+nav {
+    margin-top: 40px;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
