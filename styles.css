@@ -5,19 +5,18 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 * {
     -webkit-tap-highlight-color: transparent;
     outline: none;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
+    box-sizing: border-box;
 }
 
 /* Headings */
@@ -45,25 +44,37 @@ li {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
 }
 
 .task-content {
-    flex-grow: 1;
-    padding-left: 40px; /* Added space for the checkbox */
+    padding-left: 40px;
+    margin-bottom: 10px;
 }
 
 .task-info {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
     align-items: center;
-    margin-left: auto;
+    padding-left: 40px;
 }
 
 .deadline, .priority, .labels {
-    margin-left: 10px;
     font-size: 0.9em;
     color: #777;
+}
+
+/* Priority Colors */
+.priority-high {
+    color: red;
+}
+
+.priority-medium {
+    color: orange;
+}
+
+.priority-low {
+    color: green;
 }
 
 /* Task Categories Styles */
@@ -94,22 +105,19 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
     position: relative;
-    display: flex;
-    align-items: center;
+    display: block;
     cursor: pointer;
-    padding-left: 40px; /* Added space for the checkbox */
 }
 
 input[type="checkbox"] + label::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 15px;
     left: 10px;
     width: 20px;
     height: 20px;
     background-color: #f72414;
     border-radius: 50%;
-    transform: translateY(-50%);
     box-shadow: 0 7px 10px #ffbeb8;
     transition: 0.2s ease transform, 0.2s ease background-color, 0.2s ease box-shadow;
     z-index: 1;
@@ -122,12 +130,12 @@ input[type="checkbox"] + label:hover::before {
 }
 
 input[type="checkbox"]:active + label::before {
-    transform: translateY(-50%) scale(0.9);
+    transform: scale(0.9);
 }
 
 #tick_mark {
     position: absolute;
-    top: 50%;
+    top: 15px;
     left: 10px;
     width: 20px;
     height: 20px;
@@ -178,6 +186,7 @@ input[type="checkbox"]:checked + label #tick_mark:after {
     opacity: 1;
 }
 
+/* Navigation Styles */
 nav {
     margin-top: 40px;
     text-align: center;
